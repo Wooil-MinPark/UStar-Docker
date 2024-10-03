@@ -27,3 +27,28 @@ docker-compose down
 근데 Docker Desktop에서 GUI로 사용가능.
 
 `docker-compose up ---build` 만 알고있어도 된다.
+
+## 에러가 났다면
+
+DB구조를 업데이트해서 에러가 날 수 있습니다.
+
+그렇다면 아래 절차를 따라봅시다.
+
+1. 새로 배포한 버전이 있는지 확인
+2. 볼륨 제거
+
+```bash
+docker-compose down -v
+```
+
+3. 실행하기
+
+```bash
+docker-compose up ---build
+```
+
+or
+
+```bash
+docker-compose up -d
+```
