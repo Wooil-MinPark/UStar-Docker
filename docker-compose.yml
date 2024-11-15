@@ -21,7 +21,7 @@ services:
     restart: always
 
   app:
-    image: parkkihyun/ustar:v0.0.5.8
+    image: parkkihyun/ustar:v0.0.6
     container_name: ustar_app
     ports:
       - "8080:8080"
