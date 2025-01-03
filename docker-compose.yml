@@ -21,12 +21,16 @@ services:
     restart: always
 
   app:
-    image: parkkihyun/ustar:v0.9.2-init
+    image: parkkihyun/ustar:v0.9.2-test1
     container_name: ustar_app
     environment:
       SPRING_JPA_HIBERNATE_DDL_AUTO: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
       JWT_ACCESS_TOKEN_VALIDITY: ${JWT_ACCESS_TOKEN_VALIDITY}
       JWT_REFRESH_TOKEN_VALIDITY: ${JWT_REFRESH_TOKEN_VALIDITY}
+      SPRING_DATASOURCE_URL: jdbc:mysql://ustar_mysql:3306/ustar?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+
     ports:
       - "8080:8080"
     depends_on:
